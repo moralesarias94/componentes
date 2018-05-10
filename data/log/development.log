@@ -1,0 +1,390 @@
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateActions (20180509232137)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "actions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "desc" varchar, "user" integer, "date" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180509232137"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-09 23:22:02.015144"], ["updated_at", "2018-05-09 23:22:02.015144"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/actions" for 127.0.0.1 at 2018-05-09 18:45:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/actions"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-05-09 18:45:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actions" ("desc", "user", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["desc", "Grades"], ["user", 1], ["date", "2018-05-09 23:48:27.025927"], ["created_at", "2018-05-09 23:48:37.200894"], ["updated_at", "2018-05-09 23:48:37.200894"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAction Load (0.2ms)[0m  [1m[34mSELECT "actions".* FROM "actions"[0m
+Started GET "/actions" for 127.0.0.1 at 2018-05-09 18:48:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actions"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/actions" for 127.0.0.1 at 2018-05-09 18:48:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/actions"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/actions" for 127.0.0.1 at 2018-05-09 18:50:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/actions"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-09 18:50:15 -0500
+Processing by Api::V1::ActionsController#index as HTML
+Completed 406 Not Acceptable in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (Api::V1::ActionsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (5.0.7) lib/action_controller/metal/implicit_render.rb:43:in `default_render'
+actionpack (5.0.7) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.7) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.7) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.7) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.7) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.7) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.7) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.7) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.7) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.7) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.7) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.7) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:727:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.0.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/actions.json" for 127.0.0.1 at 2018-05-09 18:50:39 -0500
+Processing by Api::V1::ActionsController#index as JSON
+  Rendering api/v1/actions/index.json.jbuilder
+  [1m[36mAction Load (0.2ms)[0m  [1m[34mSELECT "actions".* FROM "actions" ORDER BY created_at DESC[0m
+  Rendered api/v1/actions/index.json.jbuilder (6.7ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/actions.json" for 127.0.0.1 at 2018-05-09 18:54:35 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::ActionsController#index as JSON
+  Rendering api/v1/actions/index.json.jbuilder
+  [1m[36mAction Load (0.2ms)[0m  [1m[34mSELECT "actions".* FROM "actions" ORDER BY created_at DESC[0m
+  Rendered api/v1/actions/index.json.jbuilder (15.8ms)
+Completed 200 OK in 26ms (Views: 19.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/actions" for 127.0.0.1 at 2018-05-09 18:54:41 -0500
+Processing by Api::V1::ActionsController#index as HTML
+Completed 406 Not Acceptable in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (Api::V1::ActionsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []):
+  
+actionpack (5.0.7) lib/action_controller/metal/implicit_render.rb:43:in `default_render'
+actionpack (5.0.7) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.7) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.7) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.7) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.7) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.7) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.7) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.7) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.7) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.7) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.7) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.7) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:727:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.0.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/api/v1/actions" for 127.0.0.1 at 2018-05-09 18:55:26 -0500
+Processing by Api::V1::ActionsController#create as */*
+No template found for Api::V1::ActionsController#create, rendering head :no_content
+Completed 204 No Content in 7705ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/actions" for 127.0.0.1 at 2018-05-09 18:55:38 -0500
+Processing by Api::V1::ActionsController#create as */*
+No template found for Api::V1::ActionsController#create, rendering head :no_content
+Completed 204 No Content in 10626ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/actions" for 127.0.0.1 at 2018-05-09 19:03:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::ActionsController#create as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Action (0.43ms)
+Completed 200 OK in 12ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/actions?desc=AnadirMateria&user=1" for 127.0.0.1 at 2018-05-09 19:04:49 -0500
+Processing by Api::V1::ActionsController#create as */*
+  Parameters: {"desc"=>"AnadirMateria", "user"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Action (0.3ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/actions?desc=Anadir%20Materia&user=1" for 127.0.0.1 at 2018-05-09 19:04:57 -0500
+Processing by Api::V1::ActionsController#create as */*
+  Parameters: {"desc"=>"Anadir Materia", "user"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Action (0.23ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/actions?desc=A%C3%B1adir%20Materia&user=1" for 127.0.0.1 at 2018-05-09 19:05:04 -0500
+Processing by Api::V1::ActionsController#create as */*
+  Parameters: {"desc"=>"Añadir Materia", "user"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Action (0.22ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/actions?desc=AddMateria&user=1" for 127.0.0.1 at 2018-05-09 19:05:13 -0500
+Processing by Api::V1::ActionsController#create as */*
+  Parameters: {"desc"=>"AddMateria", "user"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Action (0.25ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/actions?desc=AddMateria&user=1" for 127.0.0.1 at 2018-05-09 19:06:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::ActionsController#create as */*
+  Parameters: {"desc"=>"AddMateria", "user"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/actions?desc=AddMateria&user=1" for 127.0.0.1 at 2018-05-09 19:09:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::ActionsController#create as */*
+  Parameters: {"desc"=>"AddMateria", "user"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "actions" ("desc", "user", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["desc", "AddMateria"], ["user", 1], ["date", "2018-05-10 00:09:16.461325"], ["created_at", "2018-05-10 00:09:16.466432"], ["updated_at", "2018-05-10 00:09:16.466432"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 13ms (Views: 3.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/actions?desc=CalcNota&user=3" for 127.0.0.1 at 2018-05-09 19:09:33 -0500
+Processing by Api::V1::ActionsController#create as */*
+  Parameters: {"desc"=>"CalcNota", "user"=>"3"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "actions" ("desc", "user", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["desc", "CalcNota"], ["user", 3], ["date", "2018-05-10 00:09:33.033093"], ["created_at", "2018-05-10 00:09:33.033609"], ["updated_at", "2018-05-10 00:09:33.033609"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/actions.json" for 127.0.0.1 at 2018-05-09 19:53:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::ActionsController#index as JSON
+  Rendering api/v1/actions/index.json.jbuilder
+  [1m[36mAction Load (0.2ms)[0m  [1m[34mSELECT "actions".* FROM "actions" ORDER BY created_at DESC[0m
+  Rendered api/v1/actions/index.json.jbuilder (8.0ms)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 0.7ms)
+
+
