@@ -1,0 +1,32 @@
+<h1>Materias</h1>
+<% @materias.each do |materia| %>
+  <h4><%= materia["nombre"] %> </h2>
+
+  <%= link_to "Eliminar", "home/index/"+materia["_id"], method: :delete %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nota</th>
+        <th>Porcentaje</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% materia["notas"].zip(materia["porcentaje"]).each do |nota, porcentaje| %>
+        <tr>
+          <td><%= nota %></td>
+          <td><%= porcentaje %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="row">
+        <%= form_for :nota, url:"/home/index" do |f| %>
+          <%= f.hidden_field :id, :value => materia["_id"] %>
+          <%= f.label :nota_minima %>
+          <%= f.text_field :minimum %>
+          <%= f.submit "Calcular" %>
+        <% end %>
+  </div>
+<% end %>
+

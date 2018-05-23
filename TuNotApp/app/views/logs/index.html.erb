@@ -1,0 +1,17 @@
+<h1>Logs</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Descripcion</th>
+        <th>Fecha</th>
+    </thead>
+
+    <tbody>
+      <% @logs.each do |log| %>
+        <tr>
+          <td><%= log["desc"] %></td>
+          <td><%= log["date"] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
