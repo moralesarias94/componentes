@@ -1,24 +1,12 @@
-# README
+# Componente de manejo de sesión
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este componente es el encargado de manejar las sesiones de los usuarios, dando un token al sistema al ingresar el password y usuario correcto
 
-Things you may want to cover:
+## Despliegue
 
-* Ruby version
+```bash
+bundle install
+rails s -p 4000
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Es importante respetar el puerto de despliegue por las configuraciones que se tienen.
