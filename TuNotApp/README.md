@@ -1,24 +1,23 @@
-# README
+# TuNotApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este es el front y se comporta como API Gateway al integrar todos los servicios.
 
-Things you may want to cover:
+## Despliegue
 
-* Ruby version
+Para desplegar este componente se deben ejecutar los siguientes comandos:
 
-* System dependencies
+```bash
+bundle install
+rails s
+```
 
-* Configuration
+## Acceso
 
-* Database creation
+Para iniciar acceder a la ruta localhost:<puerto>/home
+  
+Allí se abrira la página de inicio de sesión:
 
-* Database initialization
+**Correo:** example@mail.com
+**Pass:** 123
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Para ver los logs entrar a localhost:<puerto>/logs
