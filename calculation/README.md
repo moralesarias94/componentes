@@ -1,24 +1,14 @@
-# README
+# Componente de calculo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Desarrollado en Rails, este componente es el encargado de realizar los calculos necesarios para dar la nota que debe obtener un estudiante.
 
-Things you may want to cover:
+## Despliegue
 
-* Ruby version
+Para desplegar el componente se debe realizar los siguientes comandos
 
-* System dependencies
+``` bash
+bundle install
+rails s -p 5000
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+Es importante que el despliegue se realice en este puerto por la configuración
