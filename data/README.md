@@ -1,24 +1,14 @@
-# README
+# Componente de datos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este componente es el encargado de manejar los logs de las operaciones realizadas por los usuarios
 
-Things you may want to cover:
+## Despliegue
 
-* Ruby version
+Para el despliegue de este componente se deben ejecutar los siguientes comandos
 
-* System dependencies
+```bash
+bundle install
+rails s -p 5500
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Es importante respetar el puerto de despligue por la configuración del sistema
